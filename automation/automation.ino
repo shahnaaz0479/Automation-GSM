@@ -4,16 +4,14 @@
 #include <ESP8266HTTPClient.h>
 #include<ArduinoJson.h> 
 /* Set these to your desired credentials. */
-const char *ssid = "SUHAS";  //ENTER YOUR WIFI SETTINGS
-const char *password = "9986630632";
- 
-//Link to read data from https://aiyolabs.com/api/get-hardwareList
-//Web/Server address to read/write from 
-const char *host = "aiyolabs.com";
+const char *ssid = "...................";  //ENTER YOUR WIFI SETTINGS
+const char *password = ".................";
+
+const char *host = "..............com";
 const int httpsPort = 443;  //HTTPS= 443 and HTTP = 80
  
 //SHA1 finger print of certificate use web browser to view and copy
-const char fingerprint[] PROGMEM = "14 BB 43 2C 2B 37 6C A1 8A 3C 12 AC AB C3 2D 1F 13 14 34 DB";
+const char fingerprint[] PROGMEM = "...........................................";
 //=======================================================================
 //                    Power on setup
 //=======================================================================
@@ -75,7 +73,7 @@ void loop() {
   ADCData = String(adcvalue);   //String to interger conversion
  
   //GET Data
-  Link = "/api/get-hardwareList";
+  Link = "........................";
  
   Serial.print("requesting URL: ");
   Serial.println(host+Link);
@@ -133,7 +131,7 @@ void loop() {
 
 void processSms(String message, String number) {
 
-    /*Serial.print("AT");  //Start Configuring GSM Module
+    Serial.print("AT");  //Start Configuring GSM Module
     delay(1000);         //One second delay
     Serial.println();
     Serial.println("AT+CMGF=1");  // Set GSM in text mode
@@ -158,10 +156,8 @@ void processSms(String message, String number) {
     delay(1000);                  // One second delay
     Serial.println();
     Serial.print("AT+CMGS=");     // Enter the receiver number
-    Serial.print("\"+918861334974\"");
+    Serial.print("\"+number\"");
     Serial.println();
-    delay(1000);
-    Serial.print("www.microcontroller-project.com"); // SMS body - Sms Text
     delay(1000);
     Serial.println();
     Serial.write(26);                //CTRL+Z Command to send text and end session
@@ -170,7 +166,7 @@ void processSms(String message, String number) {
 }
 
 
-/*void processCall(String number) {
+void processCall(String number) {
   
   Serial.println("AT"); //Once the handshake test is successful, it will back to OK
   Response();
@@ -191,7 +187,7 @@ void processSms(String message, String number) {
   Serial.println("ATH"); //hang up
   Serial.println("AT+CLCC");
    Response();
-}*/
+}
 
 void Response()
 {
